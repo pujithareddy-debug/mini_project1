@@ -18,5 +18,6 @@ class Register(models.Model):
         ('other', 'Other')
     ]
     gender = models.CharField(max_length=10, choices=gender_choices)
+    pincode = models.IntegerField(max_length=10)
     def __str__(self):
         return self.username
