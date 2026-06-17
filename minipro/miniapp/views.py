@@ -3,6 +3,7 @@ from miniapp.models import Register
 # Create your views here.
 def Reg(request):
     if request.method == 'POST':
+        id = request.POST.get('id')
         username = request.POST.get('username')
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -14,6 +15,7 @@ def Reg(request):
         pincode = request.POST.get('pincode')
         if password == confirm_password:
             Register.objects.create(
+                id=id,
                 username=username,
                 email=email,
                 password=password,
